@@ -4,14 +4,6 @@ A powerful, privacy-focused AI prompt builder that runs entirely on your local m
 
 
 
-
-
-
-
-
-
-
-
 ✨ Features
 🖼️ Image Analysis
 Upload images and generate detailed descriptive prompts
