@@ -1,11 +1,14 @@
 Prompt Builder Local-Only Edition
+
 A powerful, privacy-focused AI prompt builder that runs entirely on your local machine. Generate, analyze, and refine prompts for various AI image generators without sending any data to external APIs.
+
 
 
 
 
 ✨ Features
 🖼️ Image Analysis
+
 Upload images and generate detailed descriptive prompts
 
 Powered by BLIP (Bootstrapping Language-Image Pre-training)
@@ -14,7 +17,9 @@ Extract visual elements, colors, composition, and style details
 
 Perfect for reverse-engineering prompts from existing images
 
+
 🎨 AI Generator Support
+
 Midjourney - Optimized prompt formatting with parameters
 
 DALL-E - Clean, descriptive prompt structure
@@ -27,7 +32,9 @@ Firefly - Adobe-specific formatting
 
 And more - Easily extensible for new generators
 
+
 🧠 Local LLM Integration
+
 Refine and improve prompts using local language models
 
 No internet connection required after setup
@@ -36,7 +43,9 @@ Supports GGUF model format (Phi-3, Llama, etc.)
 
 Complete privacy - your prompts never leave your machine
 
+
 🔒 Privacy First
+
 100% Local Processing - No data sent to external servers
 
 No API Keys Required - No subscriptions or usage limits
@@ -45,8 +54,11 @@ Offline Capable - Works without internet connection
 
 Your Data Stays Yours - Complete control over your creative process
 
+
 🚀 Quick Start
+
 macOS Installation
+
 Download PromptBuilder-Installer-Mac.zip
 
 Extract and open Terminal in the folder
@@ -55,9 +67,12 @@ Run the installer:
 
 chmod +x install_prompt_builder.sh
 ./install_prompt_builder.sh
+
 Launch from Desktop shortcut or Applications folder
 
+
 Windows Installation
+
 Download PromptBuilder-Installer-Win.zip
 
 Extract and open Command Prompt in the folder
@@ -65,10 +80,12 @@ Extract and open Command Prompt in the folder
 Run the installer:
 
 install_prompt_builder.bat
+
 Launch from Desktop shortcut or Start Menu
 
 💻 System Requirements
 Minimum Requirements
+
 macOS: 10.15+ or Windows: 10+
 
 Python: 3.8 or later
@@ -80,6 +97,7 @@ Storage: 5GB free space (including AI model)
 Internet: Required for initial setup only
 
 Recommended Setup
+
 RAM: 8GB+ for smooth LLM operation
 
 Storage: SSD for faster model loading
@@ -88,6 +106,7 @@ CPU: Multi-core processor for better performance
 
 📦 What's Included
 Core Application
+
 Prompt Builder GUI - Intuitive PyQt6 interface
 
 Image Analysis Engine - BLIP model integration
@@ -97,6 +116,7 @@ AI Generator Configs - Pre-configured prompt templates
 Local LLM Support - Offline prompt refinement
 
 Installation Package
+
 Automated Installer - One-click setup for both platforms
 
 Dependency Management - Automatic Python package installation
@@ -140,6 +160,7 @@ Use in your favorite AI image generator
 
 🛠️ Technical Details
 Built With
+
 Python 3.8+ - Core application language
 
 PyQt6 - Modern cross-platform GUI framework
@@ -151,6 +172,7 @@ Transformers - Hugging Face model integration
 Pillow - Image processing and manipulation
 
 AI Models
+
 BLIP-1 - Image captioning and analysis
 
 Phi-3 Mini - Local language model (recommended)
@@ -160,6 +182,7 @@ Custom GGUF Models - Support for various local LLMs
 Extensible Architecture - Easy to add new models
 
 Architecture
+
 Modular Design - Separate components for different functions
 
 Plugin System - Easy to add new AI generators
@@ -186,8 +209,10 @@ prompt-builder-local/
 │   ├── blip1_m1_optimized.py
 │   └── requirements_local_only.txt
 └── docs/                      # Documentation and guides
+
 🔧 Troubleshooting
 Common Issues
+
 Python Not Found
 
 Install Python 3.8+ from python.org
@@ -217,6 +242,7 @@ Download model manually if automatic download fails
 Update model path in configuration file
 
 Getting Help
+
 Check the platform-specific README files in installer folders
 
 Run the application from terminal to see detailed error messages
@@ -224,9 +250,11 @@ Run the application from terminal to see detailed error messages
 Ensure all dependencies are properly installed
 
 🤝 Contributing
+
 We welcome contributions! Here's how you can help:
 
 Ways to Contribute
+
 Bug Reports - Found an issue? Let us know!
 
 Feature Requests - Ideas for new AI generators or features
@@ -238,6 +266,7 @@ Documentation - Help improve guides and tutorials
 Testing - Test on different systems and configurations
 
 Development Setup
+
 Clone the repository
 
 Install development dependencies
@@ -249,9 +278,11 @@ Test on both macOS and Windows if possible
 Submit a pull request
 
 📄 License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 🙏 Acknowledgments
+
 Hugging Face - For the Transformers library and model hosting
 
 PyQt - For the excellent cross-platform GUI framework
@@ -264,24 +295,27 @@ Open Source Community - For the countless libraries that make this possible
 
 📊 Roadmap
 Version 1.1 (Planned)
-[ ] Additional AI generator support (Flux, Ideogram)
 
-[ ] Batch image processing
+Additional AI generator support (Flux, Ideogram)
 
-[ ] Prompt history and favorites
+Batch image processing
 
-[ ] Custom prompt templates
+Prompt history and favorites
+
+Custom prompt templates
 
 Version 1.2 (Future)
-[ ] Plugin system for custom generators
 
-[ ] Advanced image analysis options
+Plugin system for custom generators
 
-[ ] Prompt variation generation
+Advanced image analysis options
 
-[ ] Export/import functionality
+Prompt variation generation
+
+Export/import functionality
 
 📞 Support
+
 Issues: GitHub Issues
 
 Discussions: GitHub Discussions
