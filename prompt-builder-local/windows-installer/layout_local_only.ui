@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Prompt Builder - Local Only</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+}
+
+QLabel {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px;
+}
+
+QTextEdit {
+    background-color: #2a2a2a;
+    color: white;
+    border: 2px solid #444;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 14px;
+    min-height: 80px;
+}
+
+QTextEdit:focus {
+    border-color: #666;
+}
+
+QPushButton {
+    background-color: #0000;
+    color: white;
+    border: 2px solid #444;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background-color: #9999;
+    border-color: #666;
+}
+
+QPushButton:pressed {
+    background-color: #7777;
+}
+
+QPushButton:disabled {
+    background-color: #333;
+    color: #666;
+    border-color: #333;
+}
+
+QComboBox {
+    background-color: #2a2a2a;
+    color: white;
+    border: 2px solid #444;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+QComboBox:hover {
+    border-color: #666;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 25px;
+    border-left: 1px solid #444;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #2a2a2a;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid white;
+    width: 0;
+    height: 0;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #2a2a2a;
+    color: white;
+    selection-background-color: #444;
+    border: 1px solid #444;
+}
+
+QSpinBox {
+    background-color: #2a2a2a;
+    color: white;
+    border: 2px solid #444;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+QSpinBox:hover {
+    border-color: #666;
+}
+
+QFrame {
+    background-color: transparent;
+}
+
+QCheckBox {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    spacing: 8px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+}
+
+QCheckBox::indicator:unchecked {
+    background-color: #0000;
+    border: 2px solid white;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #ffff;
+    border: 2px solid white;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+    <number>20</number>
+    </property>
+    <property name="leftMargin">
+    <number>20</number>
+    </property>
+    <property name="topMargin">
+    <number>20</number>
+    </property>
+    <property name="rightMargin">
+    <number>20</number>
+    </property>
+    <property name="bottomMargin">
+    <number>20</number>
+    </property>
+    <item>
+    <widget class="QFrame" name="leftFrame">
+    <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QVBoxLayout" name="leftLayout">
+    <property name="spacing">
+    <number>15</number>
+    </property>
+    <item>
+    <widget class="QLabel" name="logoLabel">
+    <property name="text">
+    <string>■</string>
+    </property>
+    <property name="alignment">
+    <set>Qt::AlignCenter</set>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">font-size: 48px; color: #666;</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QLabel" name="uploadTitleLabel">
+    <property name="text">
+    <string>Image Upload</string>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">font-size: 18px; font-weight: bold; color: white; padding: 8px;</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QPushButton" name="uploadButton">
+    <property name="text">
+    <string>Upload Image</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QLabel" name="imageFileLabel">
+    <property name="text">
+    <string>No image selected</string>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">color: #ccc; font-size: 14px; padding: 8px;</string>
+    </property>
+    </widget>
+    </item>
+    <item alignment="Qt::AlignmentFlag::AlignCenter">
+    <widget class="QLabel" name="imagePreviewLabel">
+    <property name="minimumSize">
+    <size>
+    <width>200</width>
+    <height>200</height>
+    </size>
+    </property>
+    <property name="maximumSize">
+    <size>
+    <width>200</width>
+    <height>200</height>
+    </size>
+    </property>
+    <property name="text">
+    <string>Image Preview</string>
+    </property>
+    <property name="alignment">
+    <set>Qt::AlignCenter</set>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">border: 2px solid #444; background-color: #2a2a2a; color: #666; font-size: 14px;</string>
+    </property>
+    <property name="scaledContents">
+    <bool>false</bool>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QPushButton" name="generateButton">
+    <property name="text">
+    <string>Generate Prompt</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QLabel" name="promptLabel">
+    <property name="text">
+    <string>Generated Prompt</string>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">font-size: 16px; font-weight: bold; color: white; padding: 8px;</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QTextEdit" name="promptText">
+    <property name="minimumSize">
+    <size>
+    <width>0</width>
+    <height>100</height>
+    </size>
+    </property>
+    <property name="placeholderText">
+    <string>Generated prompt will appear here...</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QPushButton" name="sendToRefinerButton">
+    <property name="text">
+    <string>Send to Refiner</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <spacer name="leftSpacer">
+    <property name="orientation">
+    <enum>Qt::Vertical</enum>
+    </property>
+    <property name="sizeHint" stdset="0">
+    <size>
+    <width>20</width>
+    <height>40</height>
+    </size>
+    </property>
+    </spacer>
+    </item>
+    </layout>
+    </widget>
+    </item>
+    <item>
+    <widget class="QFrame" name="middleFrame">
+    <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QVBoxLayout" name="middleLayout">
+    <property name="spacing">
+    <number>15</number>
+    </property>
+    <item>
+    <widget class="QLabel" name="aiGeneratorTitleLabel">
+    <property name="text">
+    <string>AI Generator</string>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">font-size: 18px; font-weight: bold; color: white; padding: 8px;</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QLabel" name="modelLabel">
+    <property name="text">
+    <string>Select Model:</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QComboBox" name="modelCombo"/>
+    </item>
+    <item>
+    <widget class="QPushButton" name="convertButton">
+    <property name="text">
+    <string>Convert Prompt</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QFrame" name="mjControlsFrame">
+    <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QVBoxLayout" name="mjControlsLayout">
+    <property name="spacing">
+    <number>12</number>
+    </property>
+    <item>
+    <widget class="QLabel" name="aspectRatioLabel">
+    <property name="text">
+    <string>Aspect Ratio:</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QComboBox" name="aspectRatioCombo"/>
+    </item>
+    <item>
+    <widget class="QLabel" name="versionLabel">
+    <property name="text">
+    <string>Version:</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QComboBox" name="versionCombo"/>
+    </item>
+    <item>
+    <widget class="QLabel" name="styleLabel">
+    <property name="text">
+    <string>Style:</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QComboBox" name="styleCombo"/>
+    </item>
+    <item>
+    <widget class="QLabel" name="stylizeLabel">
+    <property name="text">
+    <string>Stylize:</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QSpinBox" name="stylizeSpinBox">
+    <property name="minimum">
+    <number>0</number>
+    </property>
+    <property name="maximum">
+    <number>1000</number>
+    </property>
+    <property name="value">
+    <number>100</number>
+    </property>
+    </widget>
+    </item>
+    </layout>
+    </widget>
+    </item>
+    <item>
+    <widget class="QLabel" name="convertedLabel">
+    <property name="text">
+    <string>Converted Prompt</string>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">font-size: 16px; font-weight: bold; color: white; padding: 8px;</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QTextEdit" name="convertedText">
+    <property name="minimumSize">
+    <size>
+    <width>0</width>
+    <height>120</height>
+    </size>
+    </property>
+    <property name="placeholderText">
+    <string>Converted prompt (positive and negative) will appear here...</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <spacer name="middleSpacer">
+    <property name="orientation">
+    <enum>Qt::Vertical</enum>
+    </property>
+    <property name="sizeHint" stdset="0">
+    <size>
+    <width>20</width>
+    <height>40</height>
+    </size>
+    </property>
+    </spacer>
+    </item>
+    </layout>
+    </widget>
+    </item>
+    <item>
+    <widget class="QFrame" name="rightFrame">
+    <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QVBoxLayout" name="rightLayout">
+    <property name="spacing">
+    <number>15</number>
+    </property>
+    <item>
+    <widget class="QLabel" name="refinerTitleLabel">
+    <property name="text">
+    <string>Prompt Refiner</string>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">font-size: 18px; font-weight: bold; color: white; padding: 8px;</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QLabel" name="refinerInputLabel">
+    <property name="text">
+    <string>Input Prompt</string>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">font-size: 16px; font-weight: bold; color: white; padding: 8px;</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QTextEdit" name="refinerInput">
+    <property name="minimumSize">
+    <size>
+    <width>0</width>
+    <height>100</height>
+    </size>
+    </property>
+    <property name="placeholderText">
+    <string>Enter prompt to refine...</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QPushButton" name="refineButton">
+    <property name="text">
+    <string>Refine Prompt</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QLabel" name="refinerOutputLabel">
+    <property name="text">
+    <string>Refined Prompt</string>
+    </property>
+    <property name="styleSheet">
+    <string notr="true">font-size: 16px; font-weight: bold; color: white; padding: 8px;</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QTextEdit" name="refinerOutput">
+    <property name="minimumSize">
+    <size>
+    <width>0</width>
+    <height>100</height>
+    </size>
+    </property>
+    <property name="placeholderText">
+    <string>Refined prompt will appear here...</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+    <property name="spacing">
+    <number>12</number>
+    </property>
+    <item>
+    <widget class="QPushButton" name="sendToAiButton">
+    <property name="text">
+    <string>Send to AI Generator</string>
+    </property>
+    </widget>
+    </item>
+    <item>
+    <widget class="QPushButton" name="copyButton">
+    <property name="text">
+    <string>Copy to Clipboard</string>
+    </property>
+    </widget>
+    </item>
+    </layout>
+    </item>
+    <item>
+    <spacer name="rightSpacer">
+    <property name="orientation">
+    <enum>Qt::Vertical</enum>
+    </property>
+    <property name="sizeHint" stdset="0">
+    <size>
+    <width>20</width>
+    <height>40</height>
+    </size>
+    </property>
+    </spacer>
+    </item>
+    </layout>
+    </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
