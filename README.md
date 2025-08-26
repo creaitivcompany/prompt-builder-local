@@ -57,6 +57,7 @@ Your Data Stays Yours - Complete control over your creative process
 
 🚀 Quick Start
 
+
 macOS Installation
 
 Download PromptBuilder-Installer-Mac.zip
@@ -69,6 +70,7 @@ chmod +x install_prompt_builder.sh
 ./install_prompt_builder.sh
 
 Launch from Desktop shortcut or Applications folder
+
 
 
 Windows Installation
